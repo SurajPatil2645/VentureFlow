@@ -64,10 +64,10 @@ export default function SettingsPage() {
         oldestEntry: null,
         newestEntry: null,
       })
-      showToast('success', 'Cache cleared successfully')
+      showToast('Cache cleared successfully', 'success')
     } catch (error) {
       console.error('[v0] Failed to clear cache:', error)
-      showToast('error', 'Failed to clear cache')
+      showToast('Failed to clear cache', 'error')
     }
   }
 
@@ -77,10 +77,10 @@ export default function SettingsPage() {
       const cleared = clearExpiredCache()
       const newStats = getCacheStats()
       setCacheStats(newStats)
-      showToast('success', `Cleared ${cleared} expired entries`)
+      showToast(`Cleared ${cleared} expired entries`, 'success')
     } catch (error) {
       console.error('[v0] Failed to clear expired cache:', error)
-      showToast('error', 'Failed to clear expired cache')
+      showToast('Failed to clear expired cache', 'error')
     }
   }
 
